@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "brakes_checker", "brakes_ch
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "islands_counter", "islands_counter\islands_counter.vcxproj", "{EA0631A4-9530-41EF-BA71-D3BFB0A3319B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "find_sum", "find_sum\find_sum.vcxproj", "{2843E485-E1C0-4660-BDE6-F10E2E7121EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{EA0631A4-9530-41EF-BA71-D3BFB0A3319B}.Release|x64.Build.0 = Release|x64
 		{EA0631A4-9530-41EF-BA71-D3BFB0A3319B}.Release|x86.ActiveCfg = Release|Win32
 		{EA0631A4-9530-41EF-BA71-D3BFB0A3319B}.Release|x86.Build.0 = Release|Win32
+		{2843E485-E1C0-4660-BDE6-F10E2E7121EC}.Debug|x64.ActiveCfg = Debug|x64
+		{2843E485-E1C0-4660-BDE6-F10E2E7121EC}.Debug|x64.Build.0 = Debug|x64
+		{2843E485-E1C0-4660-BDE6-F10E2E7121EC}.Debug|x86.ActiveCfg = Debug|Win32
+		{2843E485-E1C0-4660-BDE6-F10E2E7121EC}.Debug|x86.Build.0 = Debug|Win32
+		{2843E485-E1C0-4660-BDE6-F10E2E7121EC}.Release|x64.ActiveCfg = Release|x64
+		{2843E485-E1C0-4660-BDE6-F10E2E7121EC}.Release|x64.Build.0 = Release|x64
+		{2843E485-E1C0-4660-BDE6-F10E2E7121EC}.Release|x86.ActiveCfg = Release|Win32
+		{2843E485-E1C0-4660-BDE6-F10E2E7121EC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -68,7 +68,9 @@ int main()
        {0,0,0,0},
        {1,0,1,1},
     };
-    std::cout << islands_counter(lake);
+    std::cout << islands_counter(lake)<<std::endl;
+    
+    std::vector < std::vector<int >> lake2;
+    std::cout << islands_counter(lake2);
     return 0;
-
 }
