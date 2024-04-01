@@ -22,20 +22,43 @@ std::pair<T, T> find_sum_term(const std::array<T, SIZE>& ar, const T& sum)
 {
     //найти ближайшее к сумме число и к нулю в массиве и пытаться складывать, двигаясь вокруг этих чисел
     size_t term1_i = find_nearest_up(sum), term0_i = find_nearest_up(0);
-    T delta = abs(ar[term1_i] + ar[term0_i] - sum);
+    T delta_cur{}, delta = abs(ar[term1_i] + ar[term0_i] - sum);
     if (!delta) return { ar[term1_i],ar[term0_i] };
 
     size_t term0_up_lim, term0_bottom_limit, term1_up_lim, term1_bottom_limit;
-    bool up_direction = true;
-    if(term1_i>term0_i)
+    for(bool out_direction = true;out_direction;out_direction--)
     {
-        //choose direction
-        term0_bottom_limit = 0;
-        term0_up_lim = term1_i;
-        term1_up_lim = SIZE - 1;
-        term1_bottom_limit = term0_i;
+        if (sum > 0 && out_direction)
+        {
+            term0_bottom_limit = 0;
+            term0_up_lim = term0_i;
+            term1_up_lim = SIZE - 1;
+            term1_bottom_limit = term1_i;
+        }
+        else if(sum<=0 && out_direction)
+        {
+            term0_bottom_limit = term0_i;
+            term0_up_lim = SIZE - 1;
+            term1_bottom_limit = 0;
+            term1_up_lim = term1_i;
+        }
+        else if (sum > 0 && !out_direction)
+        {
+            term0_bottom_limit = term0_i;
+            term0_up_lim = (term1_i - term0_i)/2+term0_i;
+            term1_bottom_limit = (term1_i - term0_i) / 2 + term0_i;
+            term1_up_lim = term1_i;
+        }
+        else
+        {
+            term0_up_limit = term0_i;
+            term0_bottom_limit = (term1_i - term0_i) / 2 + term0_i;
+            term1_up_limit = (term1_i - term0_i) / 2 + term0_i;
+            term1_bottom_lim = term1_i;
+        }
+        //так как массив упорядочен, двигаемся либо наружу либо внутрь, пока дельта меньше
+        //пробуем двигаться сначала одним, потом другим
+        for (size_t i = term1_i; i < term1_up_lim; up_direction ? i++ : i--)
+
     }
-    //так как массив упорядочен, двигаемся либо наружу либо внутрь, пока дельта меньше
-    //пробуем двигаться сначала одним, потом другим
-    for(size_t i=term1_i; i<term1_up_lim;i++)
 }
