@@ -4,19 +4,16 @@
 //Если комбинаций чисел, дающих нужную сумму, несколько, возвращаем любую из них.
 #include <iostream>
 #include <array>
-
-std::pair<int, int> find_sum_term(const std::set<int>& s, const int& sum)
-{
-    //найти ближайшее к сумме число и к нулю в массиве и пытаться складывать, двигаясь вокруг этих чисел
-    
-}
+#include <algorithm>
+#include "finder.h"
 
 int main()
 {
-    std::array<int> s;
-    for (size_t i = 0; i < 50; i++) s.insert(rand() % 200 - 100);
-    for(int i:s) std::cout <<i<< " ";
-    std::cout << std::endl << "size = " << s.size();
+    const size_t arr_size = 50;
+    std::array<int, arr_size> ar;
+    for (size_t i = 0; i < arr_size; i++) ar[i] =rand() % 200 - 100;
+    std::sort(ar.begin(),ar.end());
+    for(int i:ar) std::cout <<i<< " ";
     
     int K = rand() % 200 - 100;
     std::cout << std::endl << "K = " << K;
