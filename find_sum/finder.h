@@ -25,40 +25,44 @@ std::pair<T, T> find_sum_term(const std::array<T, SIZE>& ar, const T& sum)
     T delta_cur{}, delta = abs(ar[term1_i] + ar[term0_i] - sum);
     if (!delta) return { ar[term1_i],ar[term0_i] };
 
-    size_t term0_up_lim, term0_bottom_limit, term1_up_lim, term1_bottom_limit;
+    int term0_up_lim, term0_bottom_lim, term1_up_lim, term1_bottom_lim,term0_delta,term1_delta;
     for(bool out_direction = true;out_direction;out_direction--)
     {
-        if (sum > 0 && out_direction)
-        {
-            term0_bottom_limit = 0;
-            term0_up_lim = term0_i;
-            term1_up_lim = SIZE - 1;
-            term1_bottom_limit = term1_i;
+        if (sum > 0 && out_direction)//0....term0_i...term1_i....SIZE - 1
+        {                            //  <<<                 >>>>
+            term0_bottom_lim = term0_i;
+            term0_up_lim = -1;
+            term1_up_lim = SIZE;
+            term1_bottom_lim = term1_i;
+            term0_delta = 1;
+            term1_delta = -1;
         }
-        else if(sum<=0 && out_direction)
-        {
-            term0_bottom_limit = term0_i;
+        else if(sum<=0 && out_direction)//0....term1_i...term0_i....SIZE - 1
+        {                               //  <<<                 >>>>
+            term0_bottom_lim = term0_i;
             term0_up_lim = SIZE - 1;
-            term1_bottom_limit = 0;
+            term1_bottom_lim = 0;
             term1_up_lim = term1_i;
         }
-        else if (sum > 0 && !out_direction)
-        {
-            term0_bottom_limit = term0_i;
+        else if (sum > 0 && !out_direction)//0....term0_i..........term1_i....SIZE - 1
+        {                                  //            >>>     <<<
+            term0_bottom_lim = term0_i;
             term0_up_lim = (term1_i - term0_i)/2+term0_i;
-            term1_bottom_limit = (term1_i - term0_i) / 2 + term0_i;
+            term1_bottom_lim = (term1_i - term0_i) / 2 + term0_i;
             term1_up_lim = term1_i;
         }
         else
-        {
-            term0_up_limit = term0_i;
-            term0_bottom_limit = (term1_i - term0_i) / 2 + term0_i;
-            term1_up_limit = (term1_i - term0_i) / 2 + term0_i;
+        {                                   //0....term1_i..........term0_i....SIZE - 1        
+            term0_up_lim = term0_i;         //            >>>     <<<
+            term0_bottom_lim = (term1_i - term0_i) / 2 + term0_i;
+            term1_up_lim = (term1_i - term0_i) / 2 + term0_i;
             term1_bottom_lim = term1_i;
         }
         //так как массив упорядочен, двигаемся либо наружу либо внутрь, пока дельта меньше
         //пробуем двигаться сначала одним, потом другим
-        for (size_t i = term1_i; i < term1_up_lim; up_direction ? i++ : i--)
+        for (int i = term1_bottom_lim, j = term0_bottom_lim; i != term1_up_lim && j != term0_up_lim;i+term1_delta,j+term0_delta)
+        {
 
+        }
     }
 }
