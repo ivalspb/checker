@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "build_stairs", "build_stair
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "unix_path_canonical", "unix_path_canonical\unix_path_canonical.vcxproj", "{D2DB444F-1239-4349-9A1B-90B0E48CA0AE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cheapest_way", "cheapest_way\cheapest_way.vcxproj", "{CC5B9784-F037-4071-876F-B7C6C4E72FB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{D2DB444F-1239-4349-9A1B-90B0E48CA0AE}.Release|x64.Build.0 = Release|x64
 		{D2DB444F-1239-4349-9A1B-90B0E48CA0AE}.Release|x86.ActiveCfg = Release|Win32
 		{D2DB444F-1239-4349-9A1B-90B0E48CA0AE}.Release|x86.Build.0 = Release|Win32
+		{CC5B9784-F037-4071-876F-B7C6C4E72FB4}.Debug|x64.ActiveCfg = Debug|x64
+		{CC5B9784-F037-4071-876F-B7C6C4E72FB4}.Debug|x64.Build.0 = Debug|x64
+		{CC5B9784-F037-4071-876F-B7C6C4E72FB4}.Debug|x86.ActiveCfg = Debug|Win32
+		{CC5B9784-F037-4071-876F-B7C6C4E72FB4}.Debug|x86.Build.0 = Debug|Win32
+		{CC5B9784-F037-4071-876F-B7C6C4E72FB4}.Release|x64.ActiveCfg = Release|x64
+		{CC5B9784-F037-4071-876F-B7C6C4E72FB4}.Release|x64.Build.0 = Release|x64
+		{CC5B9784-F037-4071-876F-B7C6C4E72FB4}.Release|x86.ActiveCfg = Release|Win32
+		{CC5B9784-F037-4071-876F-B7C6C4E72FB4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
